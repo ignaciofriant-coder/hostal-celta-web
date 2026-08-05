@@ -317,6 +317,8 @@
   var CELTIC_PATTERN = "data:image/svg+xml;utf8," + encodeURIComponent(
     "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><g fill='none' stroke='#C89A3E' stroke-width='2'><circle cx='60' cy='60' r='26'/><circle cx='0' cy='60' r='26'/><circle cx='120' cy='60' r='26'/><circle cx='60' cy='0' r='26'/><circle cx='60' cy='120' r='26'/></g></svg>");
 
+  var WA_SVG = '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.5 2.1 7.9L.5 31.5l7.8-2C10.6 30.8 13.3 31.5 16 31.5c8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.3c-2.5 0-5-.7-7.1-1.9l-.5-.3-4.6 1.2 1.2-4.5-.3-.5C3.3 20.7 2.6 18.4 2.6 16 2.6 8.6 8.6 2.6 16 2.6S29.4 8.6 29.4 16 23.4 28.8 16 28.8z"/><path d="M24.1 19.3c-.4-.2-2.4-1.2-2.8-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.7.1-.3 0-.5 0-.7 0-.2-.9-2.2-1.2-3-.3-.7-.6-.6-.9-.6h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.9c.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>';
+
   /* ---------------- RENDER DE SECCIONES ---------------- */
   var SHOT = typeof location !== "undefined" && /[?&]shot/.test(location.search);
   function view() {
@@ -707,7 +709,10 @@
         '<a href="' + att(CFG.whatsappUrl) + '" target="_blank" rel="noopener" style="display:block;text-align:center;background:#33513C;color:#fff;font-size:15px;font-weight:700;letter-spacing:.04em;padding:15px 10px;border-radius:2px" data-hover="background:#3d6248;color:#fff">' + esc(t.ctaWhats) + '</a>' +
       '</div>';
 
-    return header + hero + trust + host + experiences + rooms + house + pucon + location + gallery + reviews + faq + cta + contact + footer + sticky;
+    var waFloat =
+      '<a class="wa-float" href="' + att(CFG.whatsappUrl) + '" target="_blank" rel="noopener" aria-label="' + (state.lang === "en" ? "Message us on WhatsApp" : "Escríbenos por WhatsApp") + '">' + WA_SVG + '</a>';
+
+    return header + hero + trust + host + experiences + rooms + house + pucon + location + gallery + reviews + faq + cta + contact + footer + sticky + waFloat;
   }
 
   /* ---------------- LIGHTBOX ---------------- */
