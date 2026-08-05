@@ -859,6 +859,12 @@
   var mq = window.matchMedia("(max-width:820px)");
   (mq.addEventListener ? mq.addEventListener.bind(mq, "change") : mq.addListener.bind(mq))(function () { render(); });
 
+  // subtle header elevation once the page is scrolled
+  window.addEventListener("scroll", function () {
+    var hd = document.querySelector("header");
+    if (hd) hd.style.boxShadow = window.scrollY > 8 ? "0 6px 20px rgba(46,29,18,.12)" : "";
+  }, { passive: true });
+
   var qlang = (location.search.match(/[?&]lang=(es|en)/) || [])[1];
   if (qlang) state.lang = qlang;
   document.addEventListener("DOMContentLoaded", render);
