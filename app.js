@@ -318,6 +318,8 @@
     "<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><g fill='none' stroke='#C89A3E' stroke-width='2'><circle cx='60' cy='60' r='26'/><circle cx='0' cy='60' r='26'/><circle cx='120' cy='60' r='26'/><circle cx='60' cy='0' r='26'/><circle cx='60' cy='120' r='26'/></g></svg>");
 
   var WA_SVG = '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.5 2.1 7.9L.5 31.5l7.8-2C10.6 30.8 13.3 31.5 16 31.5c8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.3c-2.5 0-5-.7-7.1-1.9l-.5-.3-4.6 1.2 1.2-4.5-.3-.5C3.3 20.7 2.6 18.4 2.6 16 2.6 8.6 8.6 2.6 16 2.6S29.4 8.6 29.4 16 23.4 28.8 16 28.8z"/><path d="M24.1 19.3c-.4-.2-2.4-1.2-2.8-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.7.1-.3 0-.5 0-.7 0-.2-.9-2.2-1.2-3-.3-.7-.6-.6-.9-.6h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.9c.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>';
+  var WA_ICON = '<svg viewBox="0 0 32 32" aria-hidden="true" width="17" height="17" style="fill:currentColor;flex:none"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.5 2.1 7.9L.5 31.5l7.8-2C10.6 30.8 13.3 31.5 16 31.5c8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.3c-2.5 0-5-.7-7.1-1.9l-.5-.3-4.6 1.2 1.2-4.5-.3-.5C3.3 20.7 2.6 18.4 2.6 16 2.6 8.6 8.6 2.6 16 2.6S29.4 8.6 29.4 16 23.4 28.8 16 28.8z"/><path d="M24.1 19.3c-.4-.2-2.4-1.2-2.8-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.7.1-.3 0-.5 0-.7 0-.2-.9-2.2-1.2-3-.3-.7-.6-.6-.9-.6h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.9c.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>';
+  var waBtnInner = function (label) { return '<span style="display:inline-flex;align-items:center;justify-content:center;gap:8px">' + WA_ICON + esc(label) + '</span>'; };
 
   /* ---------------- RENDER DE SECCIONES ---------------- */
   var SHOT = typeof location !== "undefined" && /[?&]shot/.test(location.search);
@@ -616,7 +618,7 @@
             '<h2 style="font-family:Cormorant Garamond,Georgia,serif;font-weight:600;font-size:clamp(28px,4vw,42px);color:#F7F1E2;margin:0 0 12px;text-wrap:balance">' + esc(t.ctaTitle) + '</h2>' +
             '<p style="color:#EFE0C8;font-size:18px;margin:0 0 26px;max-width:44ch;text-wrap:pretty">' + esc(t.ctaText) + '</p>' +
             '<div style="display:flex;gap:14px;flex-wrap:wrap">' +
-              '<a href="' + att(CFG.whatsappUrl) + '" target="_blank" rel="noopener" style="background:#B65A32;color:#fff;font-size:14.5px;font-weight:600;letter-spacing:.05em;padding:15px 30px;border-radius:2px" data-hover="background:#9d4826;color:#fff">' + esc(t.ctaWhats) + '</a>' +
+              '<a href="' + att(CFG.whatsappUrl) + '" target="_blank" rel="noopener" style="background:#B65A32;color:#fff;font-size:14.5px;font-weight:600;letter-spacing:.05em;padding:15px 30px;border-radius:2px" data-hover="background:#9d4826;color:#fff">' + waBtnInner(t.ctaWhats) + '</a>' +
               '<a href="' + att(CFG.reservaUrl) + '" target="_blank" rel="noopener" style="border:1px solid rgba(247,241,226,.6);color:#F7F1E2;font-size:14.5px;font-weight:600;letter-spacing:.05em;padding:14px 29px;border-radius:2px" data-hover="background:rgba(247,241,226,.16);color:#F7F1E2">' + esc(t.ctaBooking) + '</a>' +
               '<a href="' + att(CFG.airbnbUrl) + '" target="_blank" rel="noopener" style="border:1px solid rgba(247,241,226,.6);color:#F7F1E2;font-size:14.5px;font-weight:600;letter-spacing:.05em;padding:14px 29px;border-radius:2px" data-hover="background:rgba(247,241,226,.16);color:#F7F1E2">' + esc(t.ctaAirbnb) + '</a>' +
             '</div>' +
@@ -706,7 +708,7 @@
 
     var sticky =
       '<div data-stickycta="1" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:120;padding:12px 14px;background:rgba(46,29,18,.96);backdrop-filter:blur(8px);border-top:1px solid rgba(241,233,214,.16)">' +
-        '<a href="' + att(CFG.whatsappUrl) + '" target="_blank" rel="noopener" style="display:block;text-align:center;background:#33513C;color:#fff;font-size:15px;font-weight:700;letter-spacing:.04em;padding:15px 10px;border-radius:2px" data-hover="background:#3d6248;color:#fff">' + esc(t.ctaWhats) + '</a>' +
+        '<a href="' + att(CFG.whatsappUrl) + '" target="_blank" rel="noopener" style="display:block;text-align:center;background:#33513C;color:#fff;font-size:15px;font-weight:700;letter-spacing:.04em;padding:15px 10px;border-radius:2px" data-hover="background:#3d6248;color:#fff">' + waBtnInner(t.ctaWhats) + '</a>' +
       '</div>';
 
     var waFloat =
