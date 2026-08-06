@@ -9,11 +9,15 @@ button{font-family:inherit;cursor:pointer;}
 :focus-visible{outline:2px solid #C89A3E;outline-offset:3px;border-radius:2px;}
 .skip-link{position:fixed;top:-60px;left:12px;z-index:300;background:#6B4327;color:#F7F1E2;font-weight:700;font-size:14px;padding:12px 18px;border-radius:0 0 4px 4px;transition:top .18s ease;}
 .skip-link:focus{top:0;color:#F7F1E2;}
-.wa-float{position:fixed;right:22px;bottom:24px;z-index:130;width:56px;height:56px;border-radius:50%;background:#33513C;color:#F7F1E2;display:none;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(20,11,6,.34);transition:transform .2s ease,background .2s ease;}
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:130;width:56px;height:56px;border-radius:50%;background:#33513C;color:#F7F1E2;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(20,11,6,.34);transition:transform .2s ease,background .2s ease;}
 .wa-float svg{width:30px;height:30px;fill:currentColor;}
 .wa-float:hover{background:#3d6248;color:#F7F1E2;transform:scale(1.06);}
-@media (min-width:821px){.wa-float{display:flex;}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}.wa-float{transition:none;}}
+.site-header{border-bottom:1px solid transparent;transition:background .3s ease,box-shadow .3s ease,border-color .3s ease;}
+.site-header:not(.solid){background:linear-gradient(to bottom,rgba(20,11,6,.62),rgba(20,11,6,0));}
+.site-header:not(.solid) a,.site-header:not(.solid) button,.site-header:not(.solid) span{color:#F7F1E2 !important;text-shadow:0 1px 4px rgba(0,0,0,.6);}
+.site-header.solid a,.site-header.solid button,.site-header.solid span{text-shadow:none;}
+.site-header.solid{background:rgba(241,233,214,.94);backdrop-filter:blur(8px);border-bottom-color:#E1D4BB;box-shadow:0 6px 20px rgba(46,29,18,.10);}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}.wa-float,.site-header{transition:none;}}
 @media (min-width:821px){
   section[data-parallax]{background-attachment:fixed;}
 }
@@ -67,6 +71,4 @@ details[data-faq] > summary::-webkit-details-marker{display:none;}
   div[style*="order:2"]{order:0 !important;}
   footer > div{padding:0 16px !important;}
   h1{font-size:34px !important;}
-  div[data-stickycta]{display:flex !important;}
-  footer{padding-bottom:96px !important;}
 }

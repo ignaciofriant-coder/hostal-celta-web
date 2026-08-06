@@ -332,7 +332,7 @@
     var trustScore = score ? score + " " + t.trustScoreSuffix : "";
 
     var header =
-      '<header style="position:sticky;top:0;z-index:50;background:rgba(241,233,214,.94);backdrop-filter:blur(8px);border-bottom:1px solid #E1D4BB">' +
+      '<header class="site-header" style="position:fixed;top:0;left:0;right:0;z-index:50">' +
         '<div style="max-width:1140px;margin:0 auto;padding:0 28px;height:84px;display:flex;align-items:center;justify-content:space-between;gap:24px">' +
           '<a href="#inicio" style="display:flex;align-items:center;gap:13px;color:inherit">' +
             '<img src="assets/logo.jpg" alt="' + att(t.altLogo) + '" style="width:54px;height:54px;border-radius:50%;border:1px solid #E1D4BB" />' +
@@ -714,7 +714,7 @@
     var waFloat =
       '<a class="wa-float" href="' + att(CFG.whatsappUrl) + '" target="_blank" rel="noopener" aria-label="' + (state.lang === "en" ? "Message us on WhatsApp" : "Escríbenos por WhatsApp") + '">' + WA_SVG + '</a>';
 
-    return header + hero + trust + host + experiences + rooms + house + pucon + location + gallery + reviews + faq + cta + contact + footer + sticky + waFloat;
+    return header + hero + trust + host + experiences + rooms + house + pucon + location + gallery + reviews + faq + cta + contact + footer + waFloat;
   }
 
   /* ---------------- LIGHTBOX ---------------- */
@@ -826,6 +826,7 @@
     wireHovers(app);
     wireReveal(app);
     window.scrollTo(0, y);
+    updateHeader();
   }
 
   // global keyboard for lightbox
@@ -859,11 +860,12 @@
   var mq = window.matchMedia("(max-width:820px)");
   (mq.addEventListener ? mq.addEventListener.bind(mq, "change") : mq.addListener.bind(mq))(function () { render(); });
 
-  // subtle header elevation once the page is scrolled
-  window.addEventListener("scroll", function () {
-    var hd = document.querySelector("header");
-    if (hd) hd.style.boxShadow = window.scrollY > 8 ? "0 6px 20px rgba(46,29,18,.12)" : "";
-  }, { passive: true });
+  // header: transparent over the hero, solid once scrolled
+  function updateHeader() {
+    var hd = document.querySelector("header.site-header");
+    if (hd) hd.classList.toggle("solid", window.scrollY > 60);
+  }
+  window.addEventListener("scroll", updateHeader, { passive: true });
 
   var qlang = (location.search.match(/[?&]lang=(es|en)/) || [])[1];
   if (qlang) state.lang = qlang;
