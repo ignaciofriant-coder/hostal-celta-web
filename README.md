@@ -44,7 +44,7 @@ En `app.js`, objeto `CFG` (arriba del archivo):
 - `reservaUrl` — enlace directo de Booking del hostal (hoy: booking.com genérico).
 - Precios de **Triskel** y **Doble Superior** ("Tarifa por confirmar") — en `DATA.es.rooms` / `DATA.en.rooms`.
 - **Dominio** (hoy: hostalcelta.cl como referencia).
-- Nota: el puntaje del header se fijó en **8,9** (nota real de Booking).
+- Nota: el puntaje (`CFG.puntaje`) es **9,1** (Booking, 12 comentarios, sept 2026). Subnotas Personal/Limpieza 9,3 están en la sección de opiniones; `aggregateRating` en index.html.
 
 ## Publicar
 

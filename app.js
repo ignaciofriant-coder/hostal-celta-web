@@ -8,7 +8,7 @@
     reservaUrl: "https://www.booking.com/",          // TODO: enlace directo de Booking del hostal
     airbnbUrl: "https://www.airbnb.cl/rooms/1582074740518526118",
     whatsappUrl: "https://wa.me/56995154685",        // +56 9 9515 4685 (ficha de Google Maps; confirmar con Alex)
-    puntaje: "8,9",                                  // nota real de Booking
+    puntaje: "9,1",                                  // nota real de Booking (12 comentarios, sept 2026)
     mostrarPrecios: true,
     mostrarAgenda: true
   };
@@ -55,7 +55,7 @@
     expP2: "Quienes pasan por acá recuerdan la comodidad, pero sobre todo las conversaciones.",
     agendaTitle: "Encuentros habituales", agendaNote: "La programación cambia cada semana. Revisa Instagram o pregúntale a Alex al llegar.",
     expCta: "Ver próximos encuentros",
-    roomsKicker: "Alojamiento", roomsTitle: "Dos formas de quedarte",
+    roomsKicker: "Alojamiento", roomsTitle: "Tres formas de quedarte",
     roomsText: "Todo en madera, con baños compartidos impecables y cocina equipada para que te sientas en casa.",
     includes: "Incluye",
     houseKicker: "La casa", houseTitle: "Lo que encuentras al entrar",
@@ -73,7 +73,7 @@
     galKicker: "Galería", galTitle: "Noches de madera y música",
     galText: "Fotos y reels de la casa, tal como se ve cualquier semana. Haz clic para verlos en grande.",
     close: "Cerrar", prev: "Anterior", next: "Siguiente",
-    scoreWord: "Fabuloso", scoreSub: "Nota media en Booking.com", scoreBase: "Basado en 10 comentarios reales",
+    scoreWord: "Fantástico", scoreSub: "Nota media en Booking.com", scoreBase: "Basado en 12 comentarios reales",
     scoreStaff: "Personal", scoreClean: "Limpieza",
     reviewsLink: "Ver opiniones en Booking",
     revKicker: "Opiniones", revTitle: "Lo que dicen quienes ya vinieron",
@@ -115,7 +115,7 @@
     expP2: "Guests remember the comfort, but above all the conversations.",
     agendaTitle: "Regular gatherings", agendaNote: "The line-up changes week to week. Check Instagram or ask Alex when you arrive.",
     expCta: "See upcoming gatherings",
-    roomsKicker: "Rooms", roomsTitle: "Two ways to stay",
+    roomsKicker: "Rooms", roomsTitle: "Three ways to stay",
     roomsText: "All in timber, with spotless shared bathrooms and a fully equipped kitchen so you can settle in.",
     includes: "Included",
     houseKicker: "The house", houseTitle: "What you'll find inside",
@@ -133,7 +133,7 @@
     galKicker: "Gallery", galTitle: "Timber nights and music",
     galText: "Photos and reels of the house, exactly as it looks on any given week. Click to view large.",
     close: "Close", prev: "Previous", next: "Next",
-    scoreWord: "Fabulous", scoreSub: "Average score on Booking.com", scoreBase: "Based on 10 real reviews",
+    scoreWord: "Fantastic", scoreSub: "Average score on Booking.com", scoreBase: "Based on 12 real reviews",
     scoreStaff: "Staff", scoreClean: "Cleanliness",
     reviewsLink: "See reviews on Booking",
     revKicker: "Reviews", revTitle: "What past guests say",
@@ -164,12 +164,17 @@
         { day: "Domingo", name: "Café de la Muerte · conversación abierta", time: "19:00" }
       ],
       rooms: [
-        { num: "Opción 01", name: "Habitación Triskel", img: "assets/01_dormitorio_cama.jpg", imgOrder: "", imgPos: "center",
+        { num: "Opción 01", name: "Dormitorio compartido", img: "assets/01_dormitorio_cama.jpg", imgOrder: "", imgPos: "center",
           desc: "Ocho camas de madera, cada una con su cortina para privacidad y un baúl con llave para tus cosas. La forma más social —y más económica— de quedarte.",
           specs: ["8 camas", "Mixto", "Baúl con llave"],
           includes: ["Ropa de cama", "Toalla", "Cortina", "Baño compartido", "WiFi", "Cocina"],
           price: "Desde $18.000 / noche", promo: "Promo temporada baja" },
-        { num: "Opción 02", name: "Doble Superior", img: "assets/19_doble_mural_volcan.jpg", imgOrder: "order:2", imgPos: "center 45%",
+        { num: "Opción 02", name: "Habitación Triskel", img: "assets/07_triskel.jpg", imgOrder: "order:2", imgPos: "center 78%",
+          desc: "Nuestra doble más nueva, con nombre celta: madera por todos lados, luz cálida y el triskel como guiño en la decoración. Privacidad y calma, a pasos del salón.",
+          specs: ["1 cama doble", "Privada", "Deco celta"],
+          includes: ["Ropa de cama", "Toallas", "Baño compartido", "WiFi", "Cocina"],
+          price: "Tarifa por confirmar (pendiente)", promo: "" },
+        { num: "Opción 03", name: "Doble Superior", img: "assets/19_doble_mural_volcan.jpg", imgOrder: "", imgPos: "center 45%",
           desc: "Cama doble frente a un mural pintado a mano del volcán Villarrica, con araucarias y un pajarito en la rama. Luz de mañana y vista al jardín. Para quienes buscan privacidad sin perderse el ambiente del salón.",
           specs: ["1 cama doble", "Privada", "Mural a mano"],
           includes: ["Ropa de cama", "Toallas", "Baño compartido", "WiFi", "Cocina"],
@@ -198,10 +203,12 @@
         { name: "Parque Nacional Huerquehue", km: "33 km" }, { name: "Aeropuerto La Araucanía", km: "85 km" }
       ],
       reviews: [
+        { text: "“Amabilidad, atención y disposición para tener una buena estadía. Ambiente acogedor y cercano.”", name: "Pancho", country: "Chile", initial: "P" },
         { text: "“El hostal es súper cálido, con su chimenea en el salón… pero lo mejor, sin duda, la gente que lo regenta.”", name: "Fidel", country: "Chile", initial: "F" },
         { text: "“Todo construido en madera, lindo ambiente, súper relajado, excelente atención del dueño y su pareja. Cocina impecable.”", name: "Diegones", country: "Argentina", initial: "D" },
         { text: "“This is an amazing, cozy little space. The common area is really nice and you feel right at home.”", name: "Anna", country: "Dinamarca", initial: "A" },
-        { text: "“Pequeño hostal familiar. La cocina está bien equipada. Las camas del dormitorio tienen cortina y baúl con llave.”", name: "Leska", country: "Alemania", initial: "L" }
+        { text: "“Pequeño hostal familiar. La cocina está bien equipada. Las camas del dormitorio tienen cortina y baúl con llave.”", name: "Leska", country: "Alemania", initial: "L" },
+        { text: "“Alojamiento nuevecito. Todo maravilloso y muy amable. Hay solo 9 camas en total, así que es muy acogedor y familiar. Volvería a reservar cuando sea.”", name: "Christian", country: "Alemania", initial: "C" }
       ],
       faq: [
         { q: "¿A qué hora es el check-in y el check-out?", a: "Check-in: desde las 14:00 hasta las 23:00. Check-out: entre las 10:00 y las 11:00. Si llegas antes o más tarde, avísanos con anticipación y haremos lo posible por ayudarte." },
@@ -225,12 +232,17 @@
         { day: "Sunday", name: "Café de la Muerte · open conversation", time: "7 pm" }
       ],
       rooms: [
-        { num: "Option 01", name: "Triskel room", img: "assets/01_dormitorio_cama.jpg", imgOrder: "", imgPos: "center",
+        { num: "Option 01", name: "Shared dorm", img: "assets/01_dormitorio_cama.jpg", imgOrder: "", imgPos: "center",
           desc: "Eight timber beds, each with its own curtain for privacy and a lockable chest for your things. The most social — and most affordable — way to stay.",
           specs: ["8 beds", "Mixed", "Lockable chest"],
           includes: ["Bed linen", "Towel", "Privacy curtain", "Shared bathroom", "WiFi", "Kitchen"],
           price: "From CLP 18,000 / night", promo: "Low-season deal" },
-        { num: "Option 02", name: "Superior double", img: "assets/19_doble_mural_volcan.jpg", imgOrder: "order:2", imgPos: "center 45%",
+        { num: "Option 02", name: "Triskel room", img: "assets/07_triskel.jpg", imgOrder: "order:2", imgPos: "center 78%",
+          desc: "Our newest double, with a Celtic name: timber everywhere, warm light and the triskel as a nod in the decor. Privacy and calm, a few steps from the lounge.",
+          specs: ["1 double bed", "Private", "Celtic decor"],
+          includes: ["Bed linen", "Towels", "Shared bathroom", "WiFi", "Kitchen"],
+          price: "Rate to be confirmed (placeholder)", promo: "" },
+        { num: "Option 03", name: "Superior double", img: "assets/19_doble_mural_volcan.jpg", imgOrder: "", imgPos: "center 45%",
           desc: "A double bed facing a hand-painted mural of Villarrica volcano, with monkey-puzzle trees and a little bird on the branch. Morning light and a garden view. For guests who want privacy without missing the lounge.",
           specs: ["1 double bed", "Private", "Hand-painted mural"],
           includes: ["Bed linen", "Towels", "Shared bathroom", "WiFi", "Kitchen"],
@@ -259,10 +271,12 @@
         { name: "Huerquehue National Park", km: "33 km" }, { name: "La Araucanía airport", km: "85 km" }
       ],
       reviews: [
+        { text: "“Friendliness, attention and willingness to make sure you have a good stay. A cosy, close-knit atmosphere.”", name: "Pancho", country: "Chile", initial: "P" },
         { text: "“Really warm hostel, with its fireplace in the lounge… but the best part, without a doubt, is the people who run it.”", name: "Fidel", country: "Chile", initial: "F" },
         { text: "“All built in wood, lovely atmosphere, very relaxed, excellent care from the owner and his partner. Spotless kitchen.”", name: "Diegones", country: "Argentina", initial: "D" },
         { text: "“This is an amazing, cozy little space. The common area is really nice and you feel right at home.”", name: "Anna", country: "Denmark", initial: "A" },
-        { text: "“Small family hostel. The kitchen is well equipped. The dorm beds have a curtain and a lockable chest.”", name: "Leska", country: "Germany", initial: "L" }
+        { text: "“Small family hostel. The kitchen is well equipped. The dorm beds have a curtain and a lockable chest.”", name: "Leska", country: "Germany", initial: "L" },
+        { text: "“Brand-new place. Everything was wonderful and very friendly. There are only 9 beds in total, so it feels very cosy and family-like. I would book again any time.”", name: "Christian", country: "Germany", initial: "C" }
       ],
       faq: [
         { q: "What time is check-in and check-out?", a: "Check-in: from 2 pm to 11 pm. Check-out: between 10 and 11 am. If you arrive earlier or later, let us know in advance and we'll do our best to help." },
@@ -574,13 +588,13 @@
         '<div style="max-width:1140px;margin:0 auto;padding:0 28px">' +
           '<div style="display:grid;grid-template-columns:.78fr 1.22fr;gap:74px;align-items:center;margin-bottom:56px">' +
             '<div style="background:#33513C;color:#EFE5D2;border-radius:3px;padding:34px 30px;text-align:center">' +
-              '<p style="font-family:Cormorant Garamond,Georgia,serif;font-weight:700;font-size:64px;line-height:1;margin:0;color:#fff">8,9</p>' +
+              '<p style="font-family:Cormorant Garamond,Georgia,serif;font-weight:700;font-size:64px;line-height:1;margin:0;color:#fff">' + esc(CFG.puntaje) + '</p>' +
               '<p style="font-family:Cormorant Garamond,Georgia,serif;font-size:24px;margin:6px 0 14px;color:#fff">' + esc(t.scoreWord) + '</p>' +
               '<p style="font-size:13.5px;color:#CFDCD1;margin:0 0 4px">' + esc(t.scoreSub) + '</p>' +
               '<p style="font-size:12.5px;color:#A9BFAD;margin:0 0 18px">' + esc(t.scoreBase) + '</p>' +
               '<div style="display:flex;justify-content:center;gap:20px;font-size:13px;color:#CFDCD1;border-top:1px solid rgba(239,229,210,.24);padding-top:16px">' +
-                '<span>' + esc(t.scoreStaff) + ' <b style="font-family:Cormorant Garamond,Georgia,serif;color:#fff">9,2</b></span>' +
-                '<span>' + esc(t.scoreClean) + ' <b style="font-family:Cormorant Garamond,Georgia,serif;color:#fff">9,2</b></span>' +
+                '<span>' + esc(t.scoreStaff) + ' <b style="font-family:Cormorant Garamond,Georgia,serif;color:#fff">9,3</b></span>' +
+                '<span>' + esc(t.scoreClean) + ' <b style="font-family:Cormorant Garamond,Georgia,serif;color:#fff">9,3</b></span>' +
               '</div>' +
               '<a href="' + att(CFG.reservaUrl) + '" target="_blank" rel="noopener" style="display:inline-block;margin-top:20px;border:1px solid rgba(239,229,210,.6);color:#EFE5D2;font-size:13.5px;font-weight:600;padding:11px 20px;border-radius:2px" data-hover="background:rgba(239,229,210,.14);color:#fff">' + esc(t.reviewsLink) + '</a>' +
             '</div>' +
