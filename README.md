@@ -41,7 +41,7 @@ Luego abrir `http://localhost:8000`.
 En `app.js`, objeto `CFG` (arriba del archivo):
 
 - `whatsappUrl` — hoy `wa.me/56995154685` (+56 9 9515 4685, tomado de la ficha de Google Maps; confirmar con Alex que es su WhatsApp).
-- `reservaUrl` — enlace directo de Booking del hostal (hoy: booking.com genérico).
+- `reservaUrl` — ficha de Booking del hostal (ya puesta). Si Alex activa Pxsol, apuntar los botones de reserva a su motor.
 - Precios de **Triskel** y **Doble Superior** ("Tarifa por confirmar") — en `DATA.es.rooms` / `DATA.en.rooms`.
 - **Dominio** (hoy: hostalcelta.cl como referencia).
 - Nota: el puntaje (`CFG.puntaje`) es **9,1** (Booking, 12 comentarios, sept 2026). Subnotas Personal/Limpieza 9,3 están en la sección de opiniones; `aggregateRating` en index.html.

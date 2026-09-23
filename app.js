@@ -5,7 +5,7 @@
 
   /* ---------------- CONFIG (marcadores pendientes de Alex) ---------------- */
   var CFG = {
-    reservaUrl: "https://www.booking.com/",          // TODO: enlace directo de Booking del hostal
+    reservaUrl: "https://www.booking.com/hotel/cl/hostal-celta-pucon.es.html",
     airbnbUrl: "https://www.airbnb.cl/rooms/1582074740518526118",
     whatsappUrl: "https://wa.me/56995154685",        // +56 9 9515 4685 (ficha de Google Maps; confirmar con Alex)
     puntaje: "9,1",                                  // nota real de Booking (12 comentarios, sept 2026)
