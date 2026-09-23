@@ -40,7 +40,7 @@ Luego abrir `http://localhost:8000`.
 
 En `app.js`, objeto `CFG` (arriba del archivo):
 
-- `whatsappUrl` — número real de WhatsApp de Alex (hoy: `wa.me/56900000000`, marcador).
+- `whatsappUrl` — hoy `wa.me/56995154685` (+56 9 9515 4685, tomado de la ficha de Google Maps; confirmar con Alex que es su WhatsApp).
 - `reservaUrl` — enlace directo de Booking del hostal (hoy: booking.com genérico).
 - Precios de **Triskel** y **Doble Superior** ("Tarifa por confirmar") — en `DATA.es.rooms` / `DATA.en.rooms`.
 - **Dominio** (hoy: hostalcelta.cl como referencia).

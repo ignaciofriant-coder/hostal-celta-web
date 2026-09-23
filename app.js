@@ -7,7 +7,7 @@
   var CFG = {
     reservaUrl: "https://www.booking.com/",          // TODO: enlace directo de Booking del hostal
     airbnbUrl: "https://www.airbnb.cl/rooms/1582074740518526118",
-    whatsappUrl: "https://wa.me/56900000000",        // TODO: número real de WhatsApp de Alex
+    whatsappUrl: "https://wa.me/56995154685",        // +56 9 9515 4685 (ficha de Google Maps; confirmar con Alex)
     puntaje: "8,9",                                  // nota real de Booking
     mostrarPrecios: true,
     mostrarAgenda: true
