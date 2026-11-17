@@ -10,7 +10,8 @@
     whatsappUrl: "https://wa.me/56995154685",        // +56 9 9515 4685 (ficha de Google Maps; confirmar con Alex)
     instagramUrl: "https://www.instagram.com/hostalcelta/",
     puntaje: "9,1",                                  // nota real de Booking (12 comentarios, sept 2026)
-    comentarios: "12",
+    comentarios: "13",                               // Booking, revisado nov 2026
+    google: "5,0", googleOpiniones: "5",             // ficha de Google Maps, nov 2026
     subnotas: { personal: "9,3", limpieza: "9,3" },
     mostrarPrecios: true,
     mostrarAgenda: true
@@ -47,7 +48,10 @@
     heroKicker: "Hostal de madera · Sur de Chile",
     heroTitle: "Un refugio con alma.",
     heroText: "Chimenea, murales pintados a mano y música en vivo, a 10 minutos a pie del centro de Pucón.",
-    heroCta: "Consultar disponibilidad", heroCta2: "Ver habitaciones", heroNote: "Te respondemos por WhatsApp",
+    heroCta: "Consultar disponibilidad", heroCta2: "Ver habitaciones", heroNote: "Te responde Alex por WhatsApp",
+    factBooking: "en Booking · " + CFG.comentarios + " opiniones", factGoogle: "en Google · " + CFG.googleOpiniones + " opiniones", factBeds: "camas en total",
+    heroQuote: "Lo mejor, sin duda, la gente que lo regenta.", heroQuoteBy: "Fidel · Chile · reseña en Booking",
+    altHero: "La casa de madera del Hostal Celta al atardecer, con ruedas de carreta en la terraza",
     trustAria: "Datos rápidos del hostal", trustScoreSuffix: "en Booking",
     trustCenter: "A 10 min a pie del centro", trustBeds: "Solo 9 camas",
     hostKicker: "Bienvenidos", hostTitle: "Un lugar pequeño, hecho para compartir.",
@@ -119,7 +123,10 @@
     heroKicker: "Timber hostel · Southern Chile",
     heroTitle: "A refuge with soul.",
     heroText: "A fireplace, hand-painted murals and live music, a 10-minute walk from central Pucón.",
-    heroCta: "Check availability", heroCta2: "See the rooms", heroNote: "We reply on WhatsApp",
+    heroCta: "Check availability", heroCta2: "See the rooms", heroNote: "Alex replies on WhatsApp",
+    factBooking: "on Booking · " + CFG.comentarios + " reviews", factGoogle: "on Google · " + CFG.googleOpiniones + " reviews", factBeds: "beds in total",
+    heroQuote: "The best part, without a doubt, is the people who run it.", heroQuoteBy: "Fidel · Chile · Booking review",
+    altHero: "Hostal Celta's timber house at sunset, with cart wheels on the deck",
     trustAria: "Hostel at a glance", trustScoreSuffix: "on Booking",
     trustCenter: "10-minute walk to the centre", trustBeds: "Just 9 beds",
     hostKicker: "Welcome", hostTitle: "A small place, built for meeting people.",
@@ -197,7 +204,7 @@
           desc: "Ocho camas de madera, cada una con su cortina para privacidad y un baúl con llave para tus cosas. La forma más social —y más económica— de quedarte.",
           specs: ["8 camas", "Mixto", "Baúl con llave"],
           includes: ["Ropa de cama", "Toalla", "Baño compartido", "Wi-Fi", "Cocina"],
-          price: "Desde $18.000", unit: "por cama / noche", promo: "Promo temporada baja" },
+          price: "", unit: "", promo: "" },
         { num: "Opción 02", name: "Triskel · Doble Superior", img: "assets/19_doble_mural_volcan.jpg", imgPos: "center 45%",
           alt: "Habitación Triskel: cama doble frente a un mural del volcán Villarrica",
           desc: "Nuestra habitación privada, con nombre celta: una cama de dos plazas frente a un mural pintado a mano del volcán Villarrica, con araucarias y un pajarito en la rama. Luz de mañana y vista al jardín.",
@@ -256,7 +263,7 @@
           desc: "Eight timber beds, each with its own curtain for privacy and a lockable chest for your things. The most social — and most affordable — way to stay.",
           specs: ["8 beds", "Mixed", "Lockable chest"],
           includes: ["Bed linen", "Towel", "Shared bathroom", "Wi-Fi", "Kitchen"],
-          price: "From CLP 18,000", unit: "per bed / night", promo: "Low-season deal" },
+          price: "", unit: "", promo: "" },
         { num: "Option 02", name: "Triskel · Superior double", img: "assets/19_doble_mural_volcan.jpg", imgPos: "center 45%",
           alt: "Triskel room: a double bed facing a Villarrica volcano mural",
           desc: "Our private room, with a Celtic name: a double bed facing a hand-painted mural of Villarrica volcano, with monkey-puzzle trees and a little bird on the branch. Morning light and a garden view.",
@@ -389,30 +396,34 @@
         '</div>' +
       '</header>';
 
+    // Portada (opción A): texto + consulta de fechas a la izquierda, foto limpia a la derecha
+    var hf = function (label, name, type) {
+      return '<label class="qf__field" for="h-' + name + '"><span>' + esc(label) + '</span>' +
+        '<input id="h-' + name + '" type="' + type + '" data-field="' + name + '" value="' + att(state.form[name]) + '"' +
+        (name === "guests" ? ' min="1" max="9" inputmode="numeric"' : '') + ' /></label>';
+    };
     var hero =
-      '<section id="inicio" class="hero" data-parallax="1" aria-labelledby="hero-title" style="background-image:url(\'' + ASSET("assets/18_hero_atardecer.jpg") + '\')' + (SHOT ? ';min-height:660px' : '') + '">' +
-        '<div class="hero__veil"></div>' +
-        '<div class="wrap hero__inner">' +
+      '<section id="inicio" class="hero-a" aria-labelledby="hero-title">' +
+        '<div class="hero-a__txt">' +
           '<p class="kicker">' + esc(t.heroKicker) + '</p>' +
           '<h1 id="hero-title" class="h1">' + esc(t.heroTitle) + '</h1>' +
-          '<p class="hero__text">' + esc(t.heroText) + '</p>' +
-          '<div class="hero-ctas">' +
-            '<a class="btn btn-primary" href="#contacto">' + esc(t.heroCta) + '</a>' +
-            '<a class="btn-ghost" href="#alojamiento">' + esc(t.heroCta2) + '</a>' +
-          '</div>' +
-          '<p class="hero__note">' + WA_ICON + esc(t.heroNote) + '</p>' +
+          '<p class="hero-a__lead">' + esc(t.heroText) + '</p>' +
+          '<form class="qf" data-quickform="1" aria-label="' + att(t.formHeading) + '">' +
+            '<div class="qf__fields">' + hf(t.fIn, "in", "date") + hf(t.fOut, "out", "date") + hf(t.fGuests, "guests", "number") + '</div>' +
+            '<div class="qf__cta"><button type="submit" class="btn btn-primary">' + WA_ICON + esc(t.heroCta) + '</button>' +
+              '<span class="small">' + esc(t.heroNote) + '</span></div>' +
+          '</form>' +
+          '<ul class="facts" aria-label="' + att(t.trustAria) + '">' +
+            (score ? '<li><b>' + esc(score) + '</b><span>' + esc(t.factBooking) + '</span></li>' : '') +
+            '<li><b>' + esc(CFG.google) + '</b><span>' + esc(t.factGoogle) + '</span></li>' +
+            '<li><b>9</b><span>' + esc(t.factBeds) + '</span></li>' +
+          '</ul>' +
+        '</div>' +
+        '<div class="hero-a__photo" role="img" aria-label="' + att(t.altHero) + '" style="background-image:url(\'' + ASSET("assets/18_hero_atardecer.jpg") + '\')">' +
+          '<figure class="hero-a__quote"><blockquote><p>“' + esc(t.heroQuote) + '”</p></blockquote><figcaption>' + esc(t.heroQuoteBy) + '</figcaption></figure>' +
         '</div>' +
       '</section>';
-
-    var sep = '<span class="trust__sep" aria-hidden="true"></span>';
-    var trust =
-      '<section class="trust" aria-label="' + att(t.trustAria) + '">' +
-        '<div class="wrap trust__row">' +
-          (score ? '<span class="trust__item"><span class="trust__star" aria-hidden="true">★</span>' + esc(score + " " + t.trustScoreSuffix) + '</span>' + sep : '') +
-          '<span class="trust__item">' + esc(t.trustCenter) + '</span>' + sep +
-          '<span class="trust__item">' + esc(t.trustBeds) + '</span>' +
-        '</div>' +
-      '</section>';
+    var trust = '';
 
     var host =
       '<section class="host" data-reveal="1" aria-labelledby="host-title">' +
@@ -780,8 +791,15 @@
       el.addEventListener("click", function () { lastFocus = el; state.lightbox = parseInt(el.getAttribute("data-gal"), 10); renderLightbox(); });
     });
     root.querySelectorAll("[data-field]").forEach(function (inp) {
-      inp.addEventListener("input", function () { state.form[inp.getAttribute("data-field")] = inp.value; });
+      inp.addEventListener("input", function () {
+        var k = inp.getAttribute("data-field");
+        state.form[k] = inp.value;
+        // la portada y el formulario de contacto comparten fechas y huéspedes
+        root.querySelectorAll('[data-field="' + k + '"]').forEach(function (o) { if (o !== inp) o.value = inp.value; });
+      });
     });
+    var qf = root.querySelector("[data-quickform]");
+    if (qf) qf.addEventListener("submit", function (e) { e.preventDefault(); window.open(waLink(buildMessage()), "_blank", "noopener"); });
     var form = root.querySelector("[data-form]");
     if (form) form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -833,7 +851,7 @@
   // cabecera: transparente sobre el hero, sólida al bajar o con el menú abierto
   function updateHeader() {
     var hd = document.querySelector("header.site-header");
-    if (hd) hd.classList.toggle("solid", window.scrollY > 60 || menuOpen());
+    if (hd) hd.classList.add("solid");
   }
   window.addEventListener("scroll", updateHeader, { passive: true });
   window.matchMedia("(min-width:1101px)").addEventListener("change", function (e) { if (e.matches) setMenu(false); });
